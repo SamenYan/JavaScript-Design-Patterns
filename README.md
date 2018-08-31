@@ -87,9 +87,9 @@ MessageCenter.subscribe('demo', function() {
 
 <h3 id="throttle">节流模式</h3>
 
-对重复的业务逻辑或者dom操作进行节流控制，规定时间内执行最后一次操作，提高性能。
+对重复的Dom操作或者业务逻辑进行节流控制，规定时间内执行最后一次操作，提高性能。
 
-对于节流器，Lodash工具函数中也有封装 👉
+对于节流器，[Lodash](https://www.lodashjs.com/)工具函数中也有封装 👉
 [Examples](https://css-tricks.com/debouncing-throttling-explained-examples/)
 
 ```js
@@ -150,7 +150,12 @@ $(window).on('scroll', Throttle(dosomething)); //jQuery
 
 > 使用场景：
 
-- window 对象的 resize 和 scroll 事件
-- keydown事件
-- 文本输入、自动完成，keyup 事件
-- 鼠标移动，mousemove 事件
+- 窗口操作 - window对象的 resize、scroll 事件
+- 文本输入 - keydown、keyup 事件
+- 鼠标移动 - mousemove 事件
+
+
+## Support the project ⭐
+如果你感觉很棒，欢迎 star 或者 fork 支持我 谢谢！这有助于我们了解和发展社区。
+
+![image](https://raw.githubusercontent.com/botpress/botpress/master/.github/assets/star_us.gif)
