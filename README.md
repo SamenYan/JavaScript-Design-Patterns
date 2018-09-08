@@ -47,7 +47,7 @@ singlePattern.get('name'); // "single"
 singlePattern.say(); // "I am a single partten based js"
 ```
 
-> 使用场景：
+✍️ 使用场景：
 
 - 适合用于功能模块化需求。比如密码校验模块 `CheckPassword()`
 - 第三方引用库。比如JQuery、Zepto也是典型的单例，一次实例化全局使用 window.$ 命名空间
@@ -98,7 +98,7 @@ MessageCenter.subscribe('demo', function() {
 	//业务逻辑
 });
 ```
-> 调用实例可以看出，组件1发布消息，组件2，3...只要订阅消息就能收到组件1的状态信息，从而dosomething()。这种模式下很好地解决了组件耦合问题，干净利落。
+✍️ 调用实例可以看出，组件1发布消息，组件2，3...只要订阅消息就能收到组件1的状态信息，从而dosomething()。这种模式下很好地解决了组件耦合问题，干净利落。
 
 ---
 
@@ -165,7 +165,7 @@ window.onscroll = Throttle(dosomething); // native JS
 $(window).on('scroll', Throttle(dosomething)); //jQuery
 ```
 
-> 使用场景：
+✍️ 使用场景：
 
 - 窗口操作 - window对象的 resize、scroll 事件
 - 文本输入 - keydown、keyup 事件
@@ -179,5 +179,4 @@ $(window).on('scroll', Throttle(dosomething)); //jQuery
 
 ## License
 
-![image](https://camo.githubusercontent.com/b0224997019dec4e51d692c722ea9bee2818c837/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6d6173686170652f6170697374617475732e737667)
-  
+![image](https://camo.githubusercontent.com/b0224997019dec4e51d692c722ea9bee2818c837/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f6c6963656e73652f6d6173686170652f6170697374617475732e737667)  
