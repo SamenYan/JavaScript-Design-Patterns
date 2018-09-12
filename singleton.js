@@ -1,4 +1,4 @@
-const SinglePattern = (function() {
+const SingleTon = (function() {
 	let _instance = null;
 	//私有静态变量
 	const STATIC = {
@@ -25,4 +25,4 @@ const SinglePattern = (function() {
 	};
 })();
 
-module.exports = new SinglePattern();
+module.exports = new SingleTon();

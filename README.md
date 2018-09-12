@@ -3,18 +3,18 @@
 
 ## 目录
 
-- [单例模式](#single)
+- [单例模式](#singleton)
 - [中介者模式](#mediator)
 - [节流模式](#throttle)
 
 --- 
 
-<h3 id="single">单例模式</h3>
+<h3 id="singleton">单例模式</h3>
 
 又称单体模式，顾名思义，只允许被实例化一次的对象类。一般定义一个对象来规划一个命名空间，用来管理其属性和方法; 也常用来管理代码库的功能模块,在模块化开发中尤为常见。比如👇
 
 ```js
-const SinglePattern = (function() {
+const SingleTon = (function() {
 	let _instance = null;
 	//私有静态变量
 	const STATIC = {
@@ -42,9 +42,9 @@ const SinglePattern = (function() {
 })();
 
 //调用实例
-const singlePattern = new SinglePattern();
-singlePattern.get('name'); // "single"
-singlePattern.say(); // "I am a single partten based js"
+const singleton = new SingleTon();
+singleton.get('name'); // "single"
+singleton.say(); // "I am a single partten based js"
 ```
 
 ✍️ 使用场景：
