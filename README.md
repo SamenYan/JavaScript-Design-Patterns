@@ -239,7 +239,7 @@ const stateManager = function() {
 	}
 }();
 
-调用案例：
+//调用案例
 stateManager.setState('state0').run(); // 执行第一种情况
 stateManager.setState('state0', 'state1').run(); // 执行第一种情况 执行第二种情况
 stateManager.setState('key').run(); // 匹配状态为key值的action
