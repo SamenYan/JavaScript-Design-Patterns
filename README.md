@@ -6,6 +6,7 @@
 - [单例模式](#singleton)
 - [中介者模式](#mediator)
 - [节流模式](#throttle)
+- [状态模式](#state)
 
 --- 
 
@@ -170,6 +171,85 @@ $(window).on('scroll', Throttle(dosomething)); //jQuery
 - 窗口操作 - window对象的 resize、scroll 事件
 - 文本输入 - keydown、keyup 事件
 - 鼠标移动 - mousemove 事件
+
+---
+
+<h3 id="state">状态模式</h3>
+
+当对象内部状态或者场景状态发生改变时，导致其对应行为的改变。
+
+```js
+const stateManager = function() {
+	let _currentStates = [];
+	const states = {
+		//可能是序列号
+		state0: () => {
+			console.log('执行第一种情况');
+		},
+		state1: () => {
+			console.log('执行第二种情况');
+		},
+		state2: () => {
+			console.log('执行第三种情况');
+		},
+		//可能是特定key值
+		key: () => {
+			console.log('匹配状态为key值的action');
+		},
+		//异常
+		error : (state) => {
+			console.log('存在未知指令 =>', state);
+		},
+		donothing: () => {
+			console.log('未执行任何动作');
+		}
+	}
+
+	const Action = {
+		setState: function() {
+			const args = arguments;
+			if (!args.length) {
+				states['donothing']();
+				return this;
+			}
+
+			_currentStates = [];
+			for (let i = 0, len = args.length; i < len; i++) {
+				if (states.hasOwnProperty(args[i])) {
+					_currentStates.push(args[i]);
+				} else {
+					states['error'](args[i]);
+				}
+			}
+
+			return this;
+		},
+		run: function() {
+			_currentStates.map(i => {
+				states[i] && states[i]();
+			});
+
+			return this;
+		}
+	}
+
+	return {
+		setState: Action.setState,
+		run: Action.run
+	}
+}();
+
+调用案例：
+stateManager.setState('state0').run(); // 执行第一种情况
+stateManager.setState('state0', 'state1').run(); // 执行第一种情况 执行第二种情况
+stateManager.setState('key').run(); // 匹配状态为key值的action
+stateManager.setState('abc').run(); // 存在未知指令 => abc
+``` 
+
+✍️ 使用场景：
+
+- 业务场景涉及复杂状态管理 
+- 用来替代：switch...case，if...else if
 
 
 ## Support the project ⭐
