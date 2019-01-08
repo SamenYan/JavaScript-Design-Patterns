@@ -107,7 +107,7 @@ MessageCenter.subscribe('demo', function() {
 
 对重复的Dom操作或者业务逻辑进行节流控制，规定时间内执行最后一次操作，提高性能。
 
-对于节流器，[Lodash](https://www.lodashjs.com/)工具函数中也有封装 👉
+参考[Lodash](https://www.lodashjs.com/)中，对于节流器的封装 👉
 [Examples](https://css-tricks.com/debouncing-throttling-explained-examples/)
 
 ```js
